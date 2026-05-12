@@ -12,6 +12,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^6.3.0"
+    "aos": "^2.3.4",
+    "astro": "^6.3.0",
+    "sass": "^1.99.0",
+    "swiper": "^12.1.4"
+  },
+  "devDependencies": {
+    "@types/aos": "^3.0.7",
+    "@types/swiper": "^5.4.3"
   }
 }

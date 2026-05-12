@@ -1,210 +1,527 @@
----
-import astroLogo from '../assets/astro.svg';
-import background from '../assets/background.svg';
----
+    <header id="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="./images/logo_cb.png" alt="Multiservicios ANYBER Logo" id="main-logo">
+            </div>
 
-<div id="container">
-	<img id="background" src={background.src} alt="" fetchpriority="high" />
-	<main>
-		<section id="hero">
-			<a href="https://astro.build"
-				><img src={astroLogo.src} width="115" height="48" alt="Astro Homepage" /></a
-			>
-			<h1>
-				To get started, open the <code><pre>src/pages</pre></code> directory in your project.
-			</h1>
-			<section id="links">
-				<a class="button" href="https://docs.astro.build">Read our docs</a>
-				<a href="https://astro.build/chat"
-					>Join our Discord <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36"
-						><path
-							fill="currentColor"
-							d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.11 0A72.37 72.37 0 0 0 45.64 0a105.89 105.89 0 0 0-26.25 8.09C2.79 32.65-1.71 56.6.54 80.21a105.73 105.73 0 0 0 32.17 16.15 77.7 77.7 0 0 0 6.89-11.11 68.42 68.42 0 0 1-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57 0 0 0 64.32 0c.87.71 1.76 1.39 2.66 2a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.1 105.25 105.25 0 0 0 32.19-16.14c2.64-27.38-4.51-51.11-18.9-72.15ZM42.45 65.69C36.18 65.69 31 60 31 53s5-12.74 11.43-12.74S54 46 53.89 53s-5.05 12.69-11.44 12.69Zm42.24 0C78.41 65.69 73.25 60 73.25 53s5-12.74 11.44-12.74S96.23 46 96.12 53s-5.04 12.69-11.43 12.69Z"
-						></path></svg
-					>
-				</a>
-			</section>
-		</section>
-	</main>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="./index.html" data-i18n="nav_home">Inicio</a></li>
+                    <li><a href="./company.html" data-i18n="nav_company">Empresa</a></li>
+                    <li><a href="#servicios" data-i18n="nav_services">Servicios</a></li>
+                    <li><a href="./proyects.html" data-i18n="nav_projects">Proyectos</a></li>
+                    <li><a href="./contact.html" data-i18n="nav_contact">Contacto</a></li>
+                </ul>
+            </nav>
 
-	<a href="https://astro.build/blog/astro-6-beta/" id="news" class="box">
-		<svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"
-			><path
-				d="M24.667 12c1.333 1.414 2 3.192 2 5.334 0 4.62-4.934 5.7-7.334 12C18.444 28.567 18 27.456 18 26c0-4.642 6.667-7.053 6.667-14Zm-5.334-5.333c1.6 1.65 2.4 3.43 2.4 5.333 0 6.602-8.06 7.59-6.4 17.334C13.111 27.787 12 25.564 12 22.666c0-4.434 7.333-8 7.333-16Zm-6-5.333C15.111 3.555 16 5.556 16 7.333c0 8.333-11.333 10.962-5.333 22-3.488-.774-6-4-6-8 0-8.667 8.666-10 8.666-20Z"
-				fill="#111827"></path></svg
-		>
-		<h2>What's New in Astro 6.0?</h2>
-		<p>
-			Redesigned dev server, fonts, live collections, built-in CSP support, and more! Click to
-			explore Astro 6.0's new features.
-		</p>
-	</a>
-</div>
+            <div class="header-actions">
+                <div class="theme-switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <label for="theme-toggle" class="switch-label">
+                        <span class="icon sun">☀️</span>
+                        <span class="icon moon">🌙</span>
+                        <span class="ball"></span>
+                    </label>
+                </div>
 
-<style>
-	#background {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-		filter: blur(100px);
-	}
+                <div class="lang-selector">
+                    <button class="lang-btn" id="lang-btn">
+                        <img src="https://flagcdn.com/w20/es.png" alt="ES" id="current-flag">
+                        <span id="current-lang-text">ES</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="lang-dropdown" id="lang-dropdown">
+                        <div class="lang-option" data-lang="es">
+                            <img src="https://flagcdn.com/w20/es.png" alt="ES"> ES
+                        </div>
+                        <div class="lang-option" data-lang="en">
+                            <img src="https://flagcdn.com/w20/gb.png" alt="EN"> EN
+                        </div>
+                        <div class="lang-option" data-lang="fr">
+                            <img src="https://flagcdn.com/w20/fr.png" alt="FR"> FR
+                        </div>
+                        <div class="lang-option" data-lang="de">
+                            <img src="https://flagcdn.com/w20/de.png" alt="DE"> DE
+                        </div>
+                    </div>
+                </div>
 
-	#container {
-		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-		height: 100%;
-	}
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
 
-	main {
-		height: 100%;
-		display: flex;
-		justify-content: center;
-	}
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="hero">
+            <div class="video-container">
+                <video id="hero-video" preload="auto" muted autoplay playsinline>
+                    <source src="./video/video_house.mp4" type="video/mp4">
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-home-renovation-work-4034-large.mp4"
+                        type="video/mp4">
+                </video>
 
-	#hero {
-		display: flex;
-		align-items: start;
-		flex-direction: column;
-		justify-content: center;
-		padding: 16px;
-	}
+                <div class="image_logo_hero">
+                    <img src="./images/logo_mejor_calidad.png" alt="Multiservicios ANYBER Logo">
+                </div>
 
-	h1 {
-		font-size: 22px;
-		margin-top: 0.25em;
-	}
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title" data-i18n="hero_title">Especialistas en reformas integrales, cocinas y baños
+                    desde hace +25 años</h1>
+                <a href="#contacto" class="btn btn-primary" data-i18n="hero_btn">Resolvemos tus dudas</a>
+                <div class="scroll-indicator">
+                    <p data-i18n="scroll_text">Scroll para experimentar</p>
+                    <div class="arrow-down"></div>
+                </div>
+            </div>
+        </section>
 
-	#links {
-		display: flex;
-		gap: 16px;
-	}
+        <!-- Sobre Nosotros -->
+        <section id="empresa" class="about section-padding">
+            <div class="container">
+                <h2 class="section-title-bg" data-text="SOBRE NOSOTROS">SOBRE NOSOTROS</h2>
+                <h3 class="section-subtitle" data-i18n="about_welcome">Bienvenidos a Multiservicios AnyBer</h3>
 
-	#links a {
-		display: flex;
-		align-items: center;
-		padding: 10px 12px;
-		color: #111827;
-		text-decoration: none;
-		transition: color 0.2s;
-	}
+                <div class="about-grid">
+                    <div class="about-images">
+                        <div class="img-wrapper img-1">
+                            <img src="https://picsum.photos/seed/kitchen/600/800" alt="Reforma Cocina">
+                        </div>
+                        <div class="img-wrapper img-2">
+                            <img src="https://picsum.photos/seed/bathroom/600/800" alt="Reforma Baño">
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <h4 data-i18n="about_heading">SOBRE NOSOTROS</h4>
+                        <p data-i18n="about_p1">En Multiservicios AnyBer, transformamos espacios en hogares. Con más de
+                            25 años de experiencia en el sector de las reformas integrales, nos hemos consolidado como
+                            referentes en calidad, compromiso y diseño innovador.</p>
+                        <p data-i18n="about_p2">Nuestro equipo de profesionales altamente cualificados se encarga de
+                            cada detalle, desde la planificación inicial hasta la entrega final, garantizando resultados
+                            que superan las expectativas de nuestros clientes.</p>
+                        <a href="./company.html" class="btn btn-outline" data-i18n="read_more">LEER MÁS</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-	#links a:hover {
-		color: rgb(78, 80, 86);
-	}
+        <!-- Servicios -->
+        <section id="servicios" class="services section-padding">
+            <div class="container">
+                <h2 class="section-title-bg" data-text="SERVICIOS">SERVICIOS</h2>
+                <h3 class="section-subtitle text-center" data-i18n="services_title">Nuestros Servicios</h3>
 
-	#links a svg {
-		height: 1em;
-		margin-left: 8px;
-	}
+                <div class="services-grid">
+                    <div class="service-card" data-aos="flip-up">
+                        <div class="service-inner">
+                            <div class="service-front">
+                                <img src="https://picsum.photos/seed/reforma1/400/500" alt="Reformas Integrales">
+                                <h4 data-i18n="service_1">Reformas integrales</h4>
+                            </div>
+                            <div class="service-back">
+                                <p data-i18n="service_1_desc">Transformación completa de viviendas y locales comerciales
+                                    con acabados de lujo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card" data-aos="fade-up">
+                        <div class="service-inner">
+                            <div class="service-front">
+                                <img src="https://picsum.photos/seed/obra/400/500" alt="Dirección de obras">
+                                <h4 data-i18n="service_2">Dirección y ejecución de obras</h4>
+                            </div>
+                            <div class="service-back">
+                                <p data-i18n="service_2_desc">Gestión profesional de proyectos, permisos y coordinación
+                                    de gremios.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card" data-aos="fade-up">
+                        <div class="service-inner">
+                            <div class="service-front">
+                                <img src="https://picsum.photos/seed/kitchen2/400/500" alt="Reformas Baños y Cocinas">
+                                <h4 data-i18n="service_3">Reformas de baños y cocinas</h4>
+                            </div>
+                            <div class="service-back">
+                                <p data-i18n="service_3_desc">Especialistas en los espacios más importantes de tu hogar.
+                                    Diseño y funcionalidad.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card" data-aos="fade-down">
+                        <div class="service-inner">
+                            <div class="service-front">
+                                <img src="https://picsum.photos/seed/garden/400/500" alt="Jardinería">
+                                <h4 data-i18n="service_4">Jardinería</h4>
+                            </div>
+                            <div class="service-back">
+                                <p data-i18n="service_4_desc">Diseño y mantenimiento de espacios exteriores, terrazas y
+                                    jardines.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-inner">
+                            <div class="service-front">
+                                <img src="https://picsum.photos/seed/plumbing/400/500" alt="Fontanería">
+                                <h4 data-i18n="service_5">Fontanería</h4>
+                            </div>
+                            <div class="service-back">
+                                <p data-i18n="service_5_desc">Instalaciones completas, reparaciones y climatización
+                                    eficiente.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-50">
+                    <a href="#" class="btn btn-primary" data-i18n="all_services">Ver todos los servicios</a>
+                </div>
+            </div>
+        </section>
 
-	#links a.button {
-		color: white;
-		background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
-		box-shadow:
-			inset 0 0 0 1px rgba(255, 255, 255, 0.12),
-			inset 0 -2px 0 rgba(0, 0, 0, 0.24);
-		border-radius: 10px;
-	}
+        <!-- Proyectos -->
+        <section id="proyectos" class="projects section-padding">
+            <div class="container">
+                <h2 class="section-title-bg" data-text="PROYECTOS">PROYECTOS</h2>
+                <h3 class="section-subtitle text-center" data-i18n="projects_title">Nuestros Proyectos</h3>
 
-	#links a.button:hover {
-		color: rgb(230, 230, 230);
-		box-shadow: none;
-	}
+                <!--                 <div class="projects-gallery">
+                    <div class="project-item">
+                        <img src="https://picsum.photos/seed/proj1/600/800" alt="Calle Provenza">
+                        <div class="project-overlay">
+                            <span class="project-name">Calle Provenza</span>
+                            <button class="project-btn">+</button>
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <img src="https://picsum.photos/seed/proj2/600/600" alt="Calle Entenza">
+                        <div class="project-overlay">
+                            <span class="project-name">Calle Entenza</span>
+                            <button class="project-btn">+</button>
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <img src="https://picsum.photos/seed/proj3/600/900" alt="Avenida 22 de Julio">
+                        <div class="project-overlay">
+                            <span class="project-name">Avenida 22 de Julio</span>
+                            <button class="project-btn">+</button>
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <img src="https://picsum.photos/seed/proj4/600/700" alt="Calle Mallorca">
+                        <div class="project-overlay">
+                            <span class="project-name">Calle Mallorca</span>
+                            <button class="project-btn">+</button>
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <img src="https://picsum.photos/seed/proj5/600/850" alt="Paseo de Gracia">
+                        <div class="project-overlay">
+                            <span class="project-name">Paseo de Gracia</span>
+                            <button class="project-btn">+</button>
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <img src="https://picsum.photos/seed/proj6/600/650" alt="Calle Balmes">
+                        <div class="project-overlay">
+                            <span class="project-name">Calle Balmes</span>
+                            <button class="project-btn">+</button>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- SLIDER PARA PC -->
+                <div class="swiper mySwiperDesktop">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="wrapper-slider-image">
+                                <img src="./images/movimientos/movimientos01.jpeg" alt="">
+                                <div>
+                                    <a href="" class="btn-slider-image btn">Ver más</a>
+                                    <p>MOVIMIENTOS DE TIERRA Y EXCAVACIONES</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="wrapper-slider-image">
+                                <img src="https://picsum.photos/seed/proj1/600/800" alt="">
+                                <div>
+                                    <a href="" class="btn-slider-image btn">Ver más</a>
+                                    <p>Colocación de ventanas</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="wrapper-slider-image">
+                                <img src="https://picsum.photos/seed/proj2/600/800" alt="">
+                                <div>
+                                    <a href="" class="btn-slider-image btn">Ver más</a>
+                                    <p>Colocación de ventanas</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="wrapper-slider-image">
+                                <img src="https://picsum.photos/seed/proj3/600/800" alt="">
+                                <div>
+                                    <a href="" class="btn-slider-image btn">Ver más</a>
+                                    <p>Colocación de ventanas</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="wrapper-slider-image">
+                                <img src="https://picsum.photos/seed/proj4/600/800" alt="">
+                                <div>
+                                    <a href="" class="btn-slider-image btn">Ver más</a>
+                                    <p>Colocación de ventanas</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="wrapper-slider-image">
+                                <img src="https://picsum.photos/seed/proj5/600/800" alt="">
+                                <div>
+                                    <a href="" class="btn-slider-image btn">Ver más</a>
+                                    <p>Colocación de ventanas</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="wrapper-slider-image">
+                                <img src="https://picsum.photos/seed/proj6/600/800" alt="">
+                                <div>
+                                    <a href="" class="btn-slider-image btn">Ver más</a>
+                                    <p>Colocación de ventanas</p>
+                                </div>
+                            </div>
+                        </div>
 
-	pre {
-		font-family:
-			ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono',
-			monospace;
-		font-weight: normal;
-		background: linear-gradient(14deg, #d83333 0%, #f041ff 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		margin: 0;
-	}
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <!--SLIDER PARA MOVIL -->
+                <div class="swiper mySwiperMobile">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="wrapper-slider-image">
+                                <img src="./images/movimientos/movimientos01.jpeg" alt="">
+                                <div class="wrapper-slider-image_home">
+                                    <a href="" class="btn-slider-image btn">Ver más</a>
+                                    <p>MOVIMIENTOS DE TIERRA Y EXCAVACIONES</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="wrapper-slider-image">
+                                <img src="https://picsum.photos/seed/proj1/600/800" alt="">
+                                <div class="wrapper-slider-image_home">
+                                    <a href="" class="btn-slider-image btn">Ver más</a>
+                                    <p>Colocación de ventanas</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="wrapper-slider-image">
+                                <img src="https://picsum.photos/seed/proj2/600/800" alt="">
+                                <div class="wrapper-slider-image_home">
+                                    <a href="" class="btn-slider-image btn">Ver más</a>
+                                    <p>Colocación de ventanas</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="wrapper-slider-image">
+                                <img src="https://picsum.photos/seed/proj3/600/800" alt="">
+                                <div class="wrapper-slider-image_home">
+                                    <a href="" class="btn-slider-image btn">Ver más</a>
+                                    <p>Colocación de ventanas</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="wrapper-slider-image">
+                                <img src="https://picsum.photos/seed/proj4/600/800" alt="">
+                                <div class="wrapper-slider-image_home">
+                                    <a href="" class="btn-slider-image btn">Ver más</a>
+                                    <p>Colocación de ventanas</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="wrapper-slider-image">
+                                <img src="https://picsum.photos/seed/proj5/600/800" alt="">
+                                <div class="wrapper-slider-image_home">
+                                    <a href="" class="btn-slider-image btn">Ver más</a>
+                                    <p>Colocación de ventanas</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="wrapper-slider-image">
+                                <img src="https://picsum.photos/seed/proj6/600/800" alt="">
+                                <div class="wrapper-slider-image_home">
+                                    <a href="" class="btn-slider-image btn">Ver más</a>
+                                    <p>Colocación de ventanas</p>
+                                </div>
+                            </div>
+                        </div>
 
-	h2 {
-		margin: 0 0 1em;
-		font-weight: normal;
-		color: #111827;
-		font-size: 20px;
-	}
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
 
-	p {
-		color: #4b5563;
-		font-size: 16px;
-		line-height: 24px;
-		letter-spacing: -0.006em;
-		margin: 0;
-	}
 
-	code {
-		display: inline-block;
-		background:
-			linear-gradient(66.77deg, #f3cddd 0%, #f5cee7 100%) padding-box,
-			linear-gradient(155deg, #d83333 0%, #f041ff 18%, #f5cee7 45%) border-box;
-		border-radius: 8px;
-		border: 1px solid transparent;
-		padding: 6px 8px;
-	}
+                <div class="text-center mt-50">
+                    <a href="./proyects.html" class="btn btn-primary" data-i18n="all_projects">Ver todos los proyectos</a>
+                </div>
+            </div>
+        </section>
 
-	.box {
-		padding: 16px;
-		background: rgba(255, 255, 255, 1);
-		border-radius: 16px;
-		border: 1px solid white;
-	}
+        <!-- Expertos -->
+        <section class="experts section-padding">
+            <div class="container">
+                <div class="experts-grid">
+                    <div class="experts-image">
+                        <img src="https://picsum.photos/seed/team/800/600" alt="Equipo de Expertos">
+                    </div>
+                    <div class="experts-text">
+                        <h2 data-i18n="experts_title">Somos expertos en reformas</h2>
+                        <p data-i18n="experts_p1">Contamos con un equipo multidisciplinar de arquitectos, diseñadores e
+                            interioristas que trabajan codo con codo con nuestros oficiales de obra para garantizar la
+                            máxima precisión técnica y estética.</p>
+                        <p data-i18n="experts_p2">Nuestra metodología se basa en la transparencia, el cumplimiento de
+                            plazos y la comunicación constante con el cliente durante todo el proceso de reforma.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-	#news {
-		position: absolute;
-		bottom: 16px;
-		right: 16px;
-		max-width: 300px;
-		text-decoration: none;
-		transition: background 0.2s;
-		backdrop-filter: blur(50px);
-	}
+        <!-- Reseñas -->
+        <section class="reviews section-padding">
+            <div class="container">
+                <h2 class="section-title-bg" data-text="RESEÑAS">RESEÑAS</h2>
+                <h3 class="section-subtitle text-center" data-i18n="reviews_title">Lo que dicen nuestros clientes</h3>
 
-	#news:hover {
-		background: rgba(255, 255, 255, 0.55);
-	}
+                <div class="reviews-slider">
+                    <div class="reviews-track">
+                        <div class="review-card">
+                            <div class="stars">★★★★★</div>
+                            <p class="review-text">"Excelente trabajo en la reforma de mi cocina. Muy profesionales y
+                                limpios. Totalmente recomendados."</p>
+                            <div class="review-footer">
+                                <span class="client-name">Juan Pérez</span>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_Logo.svg"
+                                    alt="Google" class="google-logo">
+                            </div>
+                        </div>
+                        <div class="review-card">
+                            <div class="stars">★★★★★</div>
+                            <p class="review-text">"Reformaron mi baño en el tiempo acordado. El diseño quedó
+                                espectacular y la calidad de los materiales es top."</p>
+                            <div class="review-footer">
+                                <span class="client-name">María García</span>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_Logo.svg"
+                                    alt="Google" class="google-logo">
+                            </div>
+                        </div>
+                        <div class="review-card">
+                            <div class="stars">★★★★★</div>
+                            <p class="review-text">"Grandes profesionales. Se encargaron de todo, desde los permisos
+                                hasta el último detalle de la pintura."</p>
+                            <div class="review-footer">
+                                <span class="client-name">Carlos Rodríguez</span>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_Logo.svg"
+                                    alt="Google" class="google-logo">
+                            </div>
+                        </div>
+                        <div class="review-card">
+                            <div class="stars">★★★★★</div>
+                            <p class="review-text">"La mejor decisión para mi reforma integral. Transparencia total en
+                                el presupuesto y ejecución impecable."</p>
+                            <div class="review-footer">
+                                <span class="client-name">Ana Martínez</span>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_Logo.svg"
+                                    alt="Google" class="google-logo">
+                            </div>
+                        </div>
+                        <div class="review-card">
+                            <div class="stars">★★★★★</div>
+                            <p class="review-text">"Muy contentos con el resultado de la fachada y el jardín. Un equipo
+                                muy serio y trabajador."</p>
+                            <div class="review-footer">
+                                <span class="client-name">Luis Sánchez</span>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_Logo.svg"
+                                    alt="Google" class="google-logo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-controls">
+                        <button class="slider-btn prev">←</button>
+                        <button class="slider-btn next">→</button>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-	@media screen and (max-height: 368px) {
-		#news {
-			display: none;
-		}
-	}
+        <!-- FAQ -->
+        <section class="faq section-padding">
+            <div class="container">
+                <h2 class="section-title-bg" data-text="FAQ">FAQ</h2>
+                <h3 class="section-subtitle text-center" data-i18n="faq_title">Preguntas Frecuentes</h3>
 
-	@media screen and (max-width: 768px) {
-		#container {
-			display: flex;
-			flex-direction: column;
-		}
+                <div class="faq-list">
+                    <details>
+                        <summary data-i18n="faq_q1">¿Cuánto tiempo dura una reforma integral?</summary>
+                        <p data-i18n="faq_a1">Depende del tamaño de la vivienda, pero generalmente entre 2 y 4 meses.
+                        </p>
+                    </details>
+                    <details>
+                        <summary data-i18n="faq_q2">¿Os encargáis de los permisos de obra?</summary>
+                        <p data-i18n="faq_a2">Sí, gestionamos toda la documentación necesaria con el ayuntamiento
+                            correspondiente.</p>
+                    </details>
+                    <details>
+                        <summary data-i18n="faq_q3">¿Ofrecéis garantía en vuestros trabajos?</summary>
+                        <p data-i18n="faq_a3">Sí, todos nuestros trabajos cuentan con una garantía mínima de 2 años.</p>
+                    </details>
+                    <details>
+                        <summary data-i18n="faq_q4">¿Cómo se realiza el pago de la reforma?</summary>
+                        <p data-i18n="faq_a4">Habitualmente se realiza un pago inicial, certificaciones mensuales y un
+                            pago final tras la entrega.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
 
-		#hero {
-			display: block;
-			padding-top: 10%;
-		}
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-logo">
+                <img src="https://www.imagenes-temporales.com/subidas/ver/pL4WjV/" alt="Multiservicios ANYBER Logo">
+            </div>
+            <div class="footer-links">
+                <a href="#" data-i18n="footer_terms">Términos y Condiciones</a>
+                <a href="#" data-i18n="footer_privacy">Política de Privacidad</a>
+                <a href="#contacto" data-i18n="footer_contact">Contacto</a>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-icon">Instagram</a>
+                <a href="#" class="social-icon">TikTok</a>
+                <a href="#" class="social-icon">Twitter</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Multiservicios AnyBer. Creado por Sinihescodes</p>
+            </div>
+        </div>
 
-		#links {
-			flex-wrap: wrap;
-		}
-
-		#links a.button {
-			padding: 14px 18px;
-		}
-
-		#news {
-			right: 16px;
-			left: 16px;
-			bottom: 2.5rem;
-			max-width: 100%;
-		}
-
-		h1 {
-			line-height: 1.5;
-		}
-	}
-</style>
+        <a href="https://wa.me/123456789" class="whatsapp-btn" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+        <button id="back-to-top" class="back-to-top">↑</button>
+    </footer>

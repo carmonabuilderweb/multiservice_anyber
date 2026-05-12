@@ -1,0 +1,75 @@
+---
+import Layout from "../layouts/Layout.astro"
+---
+
+
+<Layout>
+        <!-- Contacta con nosotros -->
+        <section class="projects section-padding">
+            <div class="container">
+                <h2 class="section-title-bg" data-i18n="contact">contacta con nosotros</h2>
+                <h3 class="section-subtitle text-center"></h3>
+                <p data-i18n="contact.p1">¿Tienes un proyecto en mente o necesitas ayuda con algún servicio?</p>
+                <p data-i18n="contact.p2">En <span data-i18n="contact.span1"> Multiservicios Anyber</span> estamos listos para ayudarte. Cuéntanos qué necesitas y te
+                    ofreceremos una solución rápida, clara y adaptada a ti.</p>
+                <!-- FORM -->
+                <section>
+                    <div class="contact__form">
+                        <form>
+                            <div class="contact__group">
+                                <input class="contact__input" type="text" placeholder="Nombre" required>
+                            </div>
+
+                            <div class="contact__group">
+                                <input class="contact__input" type="email" placeholder="Email" required>
+                            </div>
+
+                            <div class="contact__group">
+                                <input class="contact__input" type="tel" placeholder="Teléfono">
+                            </div>
+
+                            <div class="contact__group">
+                                <textarea class="contact__textarea" placeholder="Mensaje" required></textarea>
+                            </div>
+
+                            <label class="form-check">
+                                <input type="checkbox" required>
+                                <span>Acepto el tratamiento de mis datos según la política de privacidad</span>
+                            </label>
+
+                            <button class="contact__button" type="submit">Enviar mensaje</button>
+                        </form>
+                    </div>
+
+
+
+                </section>
+
+        </section>
+        <section class="contact-cards">
+            <div class="contact-cards__container">
+
+                <!-- TELÉFONO -->
+                <a href="tel:+34600000000" class="contact-card">
+                    <div class="contact-card__icon">📞</div>
+                    <h3 class="contact-card__title">Llámanos</h3>
+                    <p class="contact-card__text">+34 600 000 000</p>
+                </a>
+
+                <!-- EMAIL -->
+                <a href="mailto:info@empresa.com" class="contact-card">
+                    <div class="contact-card__icon">✉️</div>
+                    <h3 class="contact-card__title">Email</h3>
+                    <p class="contact-card__text">info@empresa.com</p>
+                </a>
+
+                <!-- LOCALIZACIÓN -->
+                <a href="https://maps.google.com/?q=Valencia" target="_blank" class="contact-card">
+                    <div class="contact-card__icon">📍</div>
+                    <h3 class="contact-card__title">Localización</h3>
+                    <p class="contact-card__text">Ver en Google Maps</p>
+                </a>
+
+            </div>
+        </section>
+</Layout>

@@ -1,0 +1,209 @@
+/* **
+---------------------------------------------
+INDEX
+---------------------------------------------
+** */
+
+
+/* SOBRE NOSOTROS */
+
+.flip-card-inner {
+  transition: transform .7s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+
+/* Services Section */
+.services {
+    background-color: var(--bg-section-2);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    height: 400px;
+    perspective: 1000px;
+}
+
+.service-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+
+.service-front, .service-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.service-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+    transition: var(--transition);
+}
+
+.service-front h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: var(--font-title);
+    font-size: 2rem;
+    text-transform: uppercase;
+    background: rgba(0,0,0,0.45);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.service-back {
+      background:
+    linear-gradient(
+      to top right,
+      rgba(52, 161, 217, 0.15) 0%,
+      rgba(87, 93, 242, 0.55) 45%,
+      rgba(87, 142, 242, 0.92) 100%
+    );
+    color: black;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    text-align: center;
+}
+
+
+.service-back p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+
+/* RESEÑAS */
+.google-logo {
+    height: 50px;
+}
+
+
+/* FAQ SECTION */
+
+@function makelongleftshadow($color) {
+    $val: 0px 0px $color;
+    @for $i from 1 through 10 {
+        $color: fade-out(desaturate($color, 1%), .02);
+        $val: #{$val}, -#{$i}px #{$i}px #{$color};
+    }
+    @return $val;
+}
+
+.efecto-sombra{
+        text-shadow: makelongleftshadow(hsla(231, 50%, 30%, 1));
+    color: var(--primary);
+}
+
+
+.faq {
+    background-color: var(--bg-section-1);
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+details{
+  background-color: var(--card-bg);
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+details::details-content {
+  color: hsl(0 0% 78%);
+  font-size: 1rem;
+  block-size: 0;
+  transition: block-size 1s, content-visibility 1s;
+  transition-behavior: allow-discrete;
+}
+
+details:open::details-content {
+  block-size: auto;
+}
+
+summary {
+    padding: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-title);
+    text-transform: uppercase;
+}
+
+summary::after {
+    content: '+';
+    font-size: 24px;
+    color: var(--primary);
+    transition: transform 0.3s ease;
+}
+
+ details[open] summary::after {
+    transform: rotate(45deg);
+}
+
+details p {
+    padding: 0 20px 20px;
+    color: var(--text-muted);
+}
+
+
+
+
+/* ++++++++++
+++++++++ SERVICES
++++++++++++ */
+
+    .hero-top{
+        position: relative;
+        width: 100%;
+        height: 16rem;
+        background-color: var(--bg-section-3);
+        margin-bottom: 2rem;
+    }
+
+    .hero-bg {
+        top: 6rem;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        height: 10rem;
+        background:
+        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.05);
+    }

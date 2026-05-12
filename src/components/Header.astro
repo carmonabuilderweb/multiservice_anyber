@@ -1,0 +1,61 @@
+---
+import { Image } from 'astro:assets';
+import logoHeader from '../assets/images/logo_cb.png'
+---
+
+<header id="header">
+        <div class="header-container">
+            <div class="logo">
+                <Image src={logoHeader} alt="Es el logo de la empresa" id="main-logo"/>
+            </div>
+
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="/" data-i18n="nav_home">Inicio</a></li>
+                    <li><a href="./company" data-i18n="nav_company">Empresa</a></li>
+                    <li><a href="./services" data-i18n="nav_services">Servicios</a></li>
+                    <li><a href="./proyects" data-i18n="nav_projects">Proyectos</a></li>
+                    <li><a href="./contact" data-i18n="nav_contact">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="theme-switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <label for="theme-toggle" class="switch-label">
+                        <span class="icon sun">☀️</span>
+                        <span class="icon moon">🌙</span>
+                        <span class="ball"></span>
+                    </label>
+                </div>
+
+                <div class="lang-selector">
+                    <button class="lang-btn" id="lang-btn">
+                        <img src="https://flagcdn.com/w20/es.png" alt="ES" id="current-flag">
+                        <span id="current-lang-text">ES</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="lang-dropdown" id="lang-dropdown">
+                        <div class="lang-option" data-lang="es">
+                            <img src="https://flagcdn.com/w20/es.png" alt="ES"> ES
+                        </div>
+                        <div class="lang-option" data-lang="en">
+                            <img src="https://flagcdn.com/w20/gb.png" alt="EN"> EN
+                        </div>
+                        <div class="lang-option" data-lang="fr">
+                            <img src="https://flagcdn.com/w20/fr.png" alt="FR"> FR
+                        </div>
+                        <div class="lang-option" data-lang="de">
+                            <img src="https://flagcdn.com/w20/de.png" alt="DE"> DE
+                        </div>
+                    </div>
+                </div>
+
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>

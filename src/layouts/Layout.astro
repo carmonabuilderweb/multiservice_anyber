@@ -1,23 +1,68 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import "../assets/styles/global.css";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import "aos/dist/aos.css";
+---
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+<!doctype html>
+<html>
+    <head>
+        <!-- No indexación -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+        <meta
+            name="description"
+            content="Especialistas en reformas integrales, cocinas y baños con más de 25 años de experiencia. Calidad y profesionalidad en cada proyecto."
+        />
+        <meta name="robots" content="noindex" />
+
+        <!-- Open Graph -->
+        <meta
+            property="og:title"
+            content="Multiservicios ANYBER | Reformas Integrales"
+        />
+        <meta
+            property="og:description"
+            content="Especialistas en reformas integrales, cocinas y baños con más de 25 años de experiencia."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://multiserviciosanyber.com" />
+        <meta
+            property="og:image"
+            content="https://carmonabuilderweb.github.io/multiservicios_anyber_optimizado/images/logo_meta_image.jpeg"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta
+            property="og:image:alt"
+            content="Imagen del logotipo de la empresa. Una empresa de multiservi y reformas."
+        />
+        <meta property="og:site_name" content="Multiservicios ANYBER" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+        />
+    </head>
+    <body>
+        <Header />
+        <main>
+            <slot />
+        </main>
+        <Footer />
+        <script src="../assets/js/script"></script>
+        <script>
+            import AOS from "aos";
+            AOS.init();
+        </script>
+    </body>
+</html>
